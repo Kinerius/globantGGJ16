@@ -45,3 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Cultists
+    uniqueID: 1467927457
+    locked: 0
+  - name: OThers
+    uniqueID: 744393605
+    locked: 0
