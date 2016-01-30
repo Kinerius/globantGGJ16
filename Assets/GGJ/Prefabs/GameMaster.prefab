@@ -42,8 +42,8 @@ MonoBehaviour:
   player_1: {fileID: 0}
   player_2: {fileID: 0}
   data:
-    castTime: 3
-    cooldownTime: 3
+    castTime: 2
+    cooldownTime: 2
     cooldownBonusPerFollower: 0.1
     maxFollowers: 20
     followerTimer: 5

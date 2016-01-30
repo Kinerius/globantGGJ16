@@ -40,6 +40,7 @@ public class PlayerEntity : MonoBehaviour {
 
 	void Start () {
 		tools = new List<RitualToolType>();
+		followerList = new List<GameObject>();
 	}
 
 	public void AddRitualTool (RitualToolType type)
@@ -48,11 +49,14 @@ public class PlayerEntity : MonoBehaviour {
 			return;
 
 		if ( isCasting )
+		{
+			SacrifyFollower();
 			return;
-
+		}
 
 		if ( tools != null && tools.Count < 3 )
 		{
+			Debug.Log("add tool");
 			tools.Add(type);
 			if ( tools.Count >= 3 )
 			{
@@ -83,6 +87,7 @@ public class PlayerEntity : MonoBehaviour {
 
 	public void KillCultist ( ) 
 	{
+		Debug.Log("Killing cultist");
 		foreach ( Cultist cultist in cultistList ) 
 		{
 			if ( cultist.isAlive ) 
@@ -119,7 +124,7 @@ public class PlayerEntity : MonoBehaviour {
 			yield break;
 
 		isOnCooldown = true;
-
+		
 		currentCooldown = bonusCooldown * followerList.Count;
 		Debug.Log("Waiting: " + (data.cooldownTime - bonusCooldown));
 		yield return new WaitForSeconds(data.cooldownTime - bonusCooldown);
@@ -135,7 +140,7 @@ public class PlayerEntity : MonoBehaviour {
 		isCasting = true;
 
 		// play fire animation here
-
+		Debug.Log("Casting");
 		yield return new WaitForSeconds(data.castTime);
 
 		OnCastingComplete();
@@ -167,6 +172,7 @@ public class PlayerEntity : MonoBehaviour {
 
 	public void SacrifyFollower()
 	{
+		Debug.Log("SacrifyFollower");
 		currentPenalization += 1;
 		KillOneFollower();
 	}

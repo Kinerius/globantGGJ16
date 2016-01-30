@@ -654,6 +654,7 @@ MonoBehaviour:
   - PlayerAction3
   gm: {fileID: 0}
   monsterTemp: {fileID: 173322, guid: e5ed8ac2406209e4cb4e0338aecc8ee1, type: 2}
+  followerSpawnPoint: {fileID: 456674}
   data:
     castTime: 0
     cooldownTime: 0
