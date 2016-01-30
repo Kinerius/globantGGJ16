@@ -164,7 +164,7 @@ public class Monster : MonoBehaviour {
 	{
 		isAlive = false;
 		SoundManager.Instance.Play("sacrificio");
-		Destroy(gameObject);
+		ObjectPool.instance.PoolObject(gameObject);
 	}	
 
 }

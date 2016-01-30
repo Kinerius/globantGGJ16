@@ -1,13 +1,15 @@
 fileFormatVersion: 2
 guid: ea420791f375bcb459107cb74c6e4251
-timeCreated: 1454181208
+timeCreated: 1454191367
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: cultistaRojo_0
+    21300002: cultistaRojo_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -26,30 +28,72 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -1
-    wrapMode: -1
-  nPOTScale: 1
+    wrapMode: 1
+  nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
-  alphaIsTransparency: 0
-  textureType: -1
+  alphaIsTransparency: 1
+  textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: cultistaRojo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 40
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 5}
+        - {x: -20, y: -29}
+        - {x: 11, y: -29}
+        - {x: 12, y: -25}
+        - {x: 12, y: 26}
+        - {x: 4, y: 26}
+        - {x: -10, y: 18}
+    - name: cultistaRojo_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 40
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: -4}
+        - {x: 4, y: -4}
+        - {x: 9, y: -3}
+        - {x: 16, y: -1}
+        - {x: 20, y: 2}
+        - {x: 20, y: 12}
+        - {x: -5, y: 17}
+        - {x: -20, y: 17}
+        - {x: -20, y: -29}
+        - {x: 6, y: -29}
+        - {x: 12, y: -23}
+        - {x: 11, y: -3}
+        - {x: 6, y: -4}
     outline: []
   spritePackingTag: 
   userData: 

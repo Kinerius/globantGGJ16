@@ -15,11 +15,12 @@ public class PlayerEntity : MonoBehaviour {
 	public Transform spawnPointTransform;
 	public List<Cultist> cultistList;
 	public List<string> InputKeys;
+	private List<GameObject> followerList;
 	private Vector3 spawnDirection;
 	public GameMaster gm;
 
 	public GameObject monsterTemp = null;
-
+	public Transform followerSpawnPoint = null;
 	
 
 	List<RitualToolType> tools;
@@ -34,7 +35,6 @@ public class PlayerEntity : MonoBehaviour {
 	public PlayerData data;
 
 	private float bonusCooldown = 0;
-	private float followers = 0;
 	private float currentPenalization = 0;
 	
 
@@ -56,7 +56,7 @@ public class PlayerEntity : MonoBehaviour {
 			tools.Add(type);
 			if ( tools.Count >= 3 )
 			{
-				SummonMinion();
+				StartCoroutine(CastingCoroutine(SummonMinion));
 			}
 			//Debug.Log("Added ritual tool: " + type ); 
 		}
@@ -78,6 +78,7 @@ public class PlayerEntity : MonoBehaviour {
 		tmpMonsterScript.Spawn(spawnPointTransform.position, spawnDirection, player);
 		tmpMonsterScript.AddValues(tools);
 		tools.Clear();
+		StartCoroutine( CooldownCoroutine() );
 	}
 
 	public void KillCultist ( ) 
@@ -112,12 +113,14 @@ public class PlayerEntity : MonoBehaviour {
 		}
 	}
 
-	IEnumerator CooldownCoroutine(System.Action OnCooldownComplete)
+	IEnumerator CooldownCoroutine()
 	{
 		if ( isOnCooldown )  // esto no deberia pasar
 			yield break;
 
-		currentCooldown = bonusCooldown * followers;
+		isOnCooldown = true;
+
+		currentCooldown = bonusCooldown * followerList.Count;
 		Debug.Log("Waiting: " + (data.cooldownTime - bonusCooldown));
 		yield return new WaitForSeconds(data.cooldownTime - bonusCooldown);
 		
@@ -135,7 +138,49 @@ public class PlayerEntity : MonoBehaviour {
 
 		yield return new WaitForSeconds(data.castTime);
 
+		OnCastingComplete();
+
 		isCasting = false;
+	}
+
+	IEnumerator FollowerUpdateCoroutine(System.Action OnFollowerAddition)
+	{
+		while ( cultistList.Count > 0 )
+		{
+			yield return new WaitForSeconds(data.followerTimer + data.followerPenalization * currentPenalization);
+			if (OnFollowerAddition != null)
+			{
+				OnFollowerAddition();
+			}
+			currentPenalization = 0;
+			yield return new WaitForEndOfFrame();
+		}
+	}
+
+	public void OnFollowerAddition()
+	{
+		Debug.Log("Follower added");
+		GameObject follower = ObjectPool.instance.GetObjectForType("Follower", true);
+		follower.transform.position = followerSpawnPoint.position;
+		followerList.Add ( follower );
+	}
+
+	public void SacrifyFollower()
+	{
+		currentPenalization += 1;
+		KillOneFollower();
+	}
+
+	public void KillOneFollower()
+	{
+		foreach ( GameObject f in followerList )
+		{
+			if( f.activeInHierarchy )
+			{
+				ObjectPool.instance.PoolObject(f);
+				return;
+			}
+		}
 	}
 
 	public void Update()

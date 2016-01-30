@@ -51,6 +51,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &135466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 456674}
+  - 65: {fileID: 6590448}
+  m_Layer: 0
+  m_Name: FollowerSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &135660
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +193,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Spawn1
-  m_Icon: {fileID: -3114416830163030229, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -284,6 +300,7 @@ Transform:
   - {fileID: 489632}
   - {fileID: 429098}
   - {fileID: 402786}
+  - {fileID: 456674}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &429098
@@ -336,6 +353,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 431280}
   m_RootOrder: 0
+--- !u!4 &456674
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135466}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 6.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 427046}
+  m_RootOrder: 7
 --- !u!4 &458580
 Transform:
   m_ObjectHideFlags: 1
@@ -423,6 +452,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!65 &6590448
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135466}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 1, z: 6}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9501338
 Animator:
   serializedVersion: 3
@@ -432,7 +473,7 @@ Animator:
   m_GameObject: {fileID: 155104}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9b6e9fa713f19f5458e2dfea995d8c3c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6450ff90e0b90614c8cdcff4a0c978db, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 2
   m_ApplyRootMotion: 0
@@ -449,7 +490,7 @@ Animator:
   m_GameObject: {fileID: 170270}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c21660d5f2ee68d499bde600b6e84d28, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5af9671545959e04aad91725810936b0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 2
   m_ApplyRootMotion: 0
@@ -483,7 +524,7 @@ Animator:
   m_GameObject: {fileID: 176092}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0c4d6de64cb3f4844b4af3f9984dac51, type: 2}
+  m_Controller: {fileID: 9100000, guid: 34f75e07d7c5b6b4a9eca2c7927bad91, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 2
   m_ApplyRootMotion: 0
@@ -500,7 +541,7 @@ Animator:
   m_GameObject: {fileID: 165436}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0c4d6de64cb3f4844b4af3f9984dac51, type: 2}
+  m_Controller: {fileID: 9100000, guid: 34f75e07d7c5b6b4a9eca2c7927bad91, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 2
   m_ApplyRootMotion: 0
@@ -517,7 +558,7 @@ Animator:
   m_GameObject: {fileID: 105194}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c21660d5f2ee68d499bde600b6e84d28, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5af9671545959e04aad91725810936b0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 2
   m_ApplyRootMotion: 0
@@ -613,6 +654,13 @@ MonoBehaviour:
   - PlayerAction3
   gm: {fileID: 0}
   monsterTemp: {fileID: 173322, guid: e5ed8ac2406209e4cb4e0338aecc8ee1, type: 2}
+  data:
+    castTime: 0
+    cooldownTime: 0
+    cooldownBonusPerFollower: 0
+    maxFollowers: 0
+    followerTimer: 0
+    followerPenalization: 0
 --- !u!114 &11492850
 MonoBehaviour:
   m_ObjectHideFlags: 1
