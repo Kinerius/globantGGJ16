@@ -31,15 +31,9 @@ public class PlayerEntity : MonoBehaviour {
 
 	private float currentCooldown = 0;
 
-	public float castTime = 0;
-	public float cooldownTime = 0;
-	public float bonusCooldown = 0;
-	public float cooldownBonusPerFollower = 0;
-	public float maxFollowers = 0;
-	
-	public float followerTimer = 0;
-	public float followerPenalization = 0;
-	
+	public PlayerData data;
+
+	private float bonusCooldown = 0;
 	private float followers = 0;
 	private float currentPenalization = 0;
 	
@@ -124,8 +118,8 @@ public class PlayerEntity : MonoBehaviour {
 			yield break;
 
 		currentCooldown = bonusCooldown * followers;
-		Debug.Log("Waiting: " + (cooldownTime - bonusCooldown));
-		yield return new WaitForSeconds(cooldownTime - bonusCooldown);
+		Debug.Log("Waiting: " + (data.cooldownTime - bonusCooldown));
+		yield return new WaitForSeconds(data.cooldownTime - bonusCooldown);
 		
 		isOnCooldown = false;
 	}
@@ -139,7 +133,7 @@ public class PlayerEntity : MonoBehaviour {
 
 		// play fire animation here
 
-		yield return new WaitForSeconds(castTime);
+		yield return new WaitForSeconds(data.castTime);
 
 		isCasting = false;
 	}
