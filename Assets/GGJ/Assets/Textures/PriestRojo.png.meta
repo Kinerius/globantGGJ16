@@ -1,13 +1,19 @@
 fileFormatVersion: 2
 guid: 73157835b817b2a49b87e4dfe2d05d4e
-timeCreated: 1454181208
+timeCreated: 1454183255
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: PriestRojo_0
+    21300002: PriestRojo_1
+    21300004: PriestRojo_2
+    21300006: PriestRojo_3
+    21300008: PriestRojo_4
+    21300010: PriestRojo_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -26,30 +32,133 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 2048
+  textureFormat: -3
+  maxTextureSize: 512
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
-  nPOTScale: 1
+    wrapMode: 1
+  nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
-  alphaIsTransparency: 0
-  textureType: -1
+  alphaIsTransparency: 1
+  textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: PriestRojo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 45
+        height: 58
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 0}
+        - {x: 0, y: -1}
+        - {x: 0, y: -51}
+        - {x: 1, y: -58}
+        - {x: 42, y: -58}
+        - {x: 45, y: -41}
+        - {x: 45, y: 0}
+    - name: PriestRojo_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 0
+        width: 45
+        height: 58
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 0}
+        - {x: 6, y: -58}
+        - {x: 42, y: -58}
+        - {x: 45, y: -55}
+        - {x: 45, y: 0}
+    - name: PriestRojo_2
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 45
+        height: 58
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 0}
+        - {x: 0, y: -58}
+        - {x: 39, y: -58}
+        - {x: 45, y: -25}
+        - {x: 45, y: -2}
+        - {x: 33, y: 0}
+    - name: PriestRojo_3
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 0
+        width: 45
+        height: 58
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 0}
+        - {x: 0, y: -32}
+        - {x: 5, y: -56}
+        - {x: 7, y: -58}
+        - {x: 39, y: -58}
+        - {x: 39, y: 0}
+    - name: PriestRojo_4
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 45
+        height: 58
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: -58}
+        - {x: 34, y: -58}
+        - {x: 43, y: -50}
+        - {x: 43, y: -1}
+        - {x: 7, y: -1}
+        - {x: 4, y: -19}
+    - name: PriestRojo_5
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 45
+        height: 58
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 0}
+        - {x: 4, y: -19}
+        - {x: 4, y: -58}
+        - {x: 26, y: -58}
+        - {x: 34, y: -26}
+        - {x: 36, y: -15}
+        - {x: 36, y: 0}
     outline: []
   spritePackingTag: 
   userData: 
