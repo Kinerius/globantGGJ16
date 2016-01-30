@@ -47,8 +47,10 @@
   <ItemGroup>
      <Compile Include="Assets\BrightnessCycle.cs" />
      <Compile Include="Assets\GGJ\Scripts\Cultist.cs" />
+     <Compile Include="Assets\GGJ\Scripts\Effect.cs" />
      <Compile Include="Assets\GGJ\Scripts\GameMaster.cs" />
      <Compile Include="Assets\GGJ\Scripts\Monster.cs" />
+     <Compile Include="Assets\GGJ\Scripts\ObjectPool.cs" />
      <Compile Include="Assets\GGJ\Scripts\PlayerEntity.cs" />
      <Compile Include="Assets\GGJ\Scripts\SoundManager.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />

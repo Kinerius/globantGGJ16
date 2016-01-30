@@ -28,7 +28,21 @@ public class PlayerEntity : MonoBehaviour {
 
 	private bool isCasting = false;
 	private bool isOnCooldown = false;
+
 	private float currentCooldown = 0;
+
+	public float castTime = 0;
+	public float cooldownTime = 0;
+	public float bonusCooldown = 0;
+	public float cooldownBonusPerFollower = 0;
+	public float maxFollowers = 0;
+	
+	public float followerTimer = 0;
+	public float followerPenalization = 0;
+	
+	private float followers = 0;
+	private float currentPenalization = 0;
+	
 
 	void Start () {
 		tools = new List<RitualToolType>();
@@ -36,6 +50,13 @@ public class PlayerEntity : MonoBehaviour {
 
 	public void AddRitualTool (RitualToolType type)
 	{
+		if ( isOnCooldown ) 
+			return;
+
+		if ( isCasting )
+			return;
+
+
 		if ( tools != null && tools.Count < 3 )
 		{
 			tools.Add(type);
@@ -56,7 +77,8 @@ public class PlayerEntity : MonoBehaviour {
 			spawnDirection = -Vector3.right;
 		}
 		Debug.Log("Summoning minion");
-		GameObject tmpMonster = Instantiate(monsterTemp);
+		//GameObject tmpMonster = Instantiate(monsterTemp);
+		GameObject tmpMonster = ObjectPool.instance.GetObjectForType("Monster", true);
 		tmpMonster.SetActive(false);
 		Monster tmpMonsterScript = tmpMonster.GetComponent<Monster>();
 		tmpMonsterScript.Spawn(spawnPointTransform.position, spawnDirection, player);
@@ -94,6 +116,32 @@ public class PlayerEntity : MonoBehaviour {
 			//Debug.Log("Tijera");
 			AddRitualTool(RitualToolType.TIJERA);	
 		}
+	}
+
+	IEnumerator CooldownCoroutine(System.Action OnCooldownComplete)
+	{
+		if ( isOnCooldown )  // esto no deberia pasar
+			yield break;
+
+		currentCooldown = bonusCooldown * followers;
+		Debug.Log("Waiting: " + (cooldownTime - bonusCooldown));
+		yield return new WaitForSeconds(cooldownTime - bonusCooldown);
+		
+		isOnCooldown = false;
+	}
+
+	IEnumerator CastingCoroutine(System.Action OnCastingComplete)
+	{
+		if ( isCasting )
+			yield break;
+
+		isCasting = true;
+
+		// play fire animation here
+
+		yield return new WaitForSeconds(castTime);
+
+		isCasting = false;
 	}
 
 	public void Update()
