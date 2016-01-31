@@ -8,12 +8,6 @@ AnimatorController:
   m_Name: AC_Create
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Demon1Azul
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
   - m_Name: FinishAtack
     m_Type: 4
     m_DefaultFloat: 0
@@ -33,6 +27,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: Demon1Rojo
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Demon1Azul
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -70,6 +70,18 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: Demon3Puple
     m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: MonsterType
+    m_Type: 3
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: MonsterVariation
+    m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -262,9 +274,12 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Demon1Azul
-    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: MonsterType
+    m_EventTreshold: 1
+  - m_ConditionMode: 6
+    m_ConditionEvent: MonsterVariation
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110259178}
   m_Solo: 0
@@ -787,9 +802,12 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Demon1Rojo
-    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: MonsterType
+    m_EventTreshold: 1
+  - m_ConditionMode: 6
+    m_ConditionEvent: MonsterVariation
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110252660}
   m_Solo: 0
