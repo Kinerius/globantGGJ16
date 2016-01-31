@@ -1,9 +1,11 @@
 fileFormatVersion: 2
 guid: 6d0b05bd24504c14d8cf286d985c9b10
-timeCreated: 1454235314
+timeCreated: 1454236483
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: slaveboton_0
+    21300002: slaveboton_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,26 +32,70 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
-  nPOTScale: 1
+    wrapMode: 1
+  nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
-  alphaIsTransparency: 0
-  textureType: -1
+  alphaIsTransparency: 1
+  textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: slaveboton_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 86, y: 86}
+        - {x: 81, y: 90}
+        - {x: -86, y: 90}
+        - {x: -90, y: 87}
+        - {x: -90, y: -81}
+        - {x: -86, y: -86}
+        - {x: -77, y: -90}
+        - {x: 84, y: -90}
+        - {x: 89, y: -87}
+        - {x: 90, y: -84}
+        - {x: 90, y: 79}
+    - name: slaveboton_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 86, y: 86}
+        - {x: 81, y: 90}
+        - {x: -86, y: 90}
+        - {x: -90, y: 87}
+        - {x: -90, y: -81}
+        - {x: -86, y: -86}
+        - {x: -77, y: -90}
+        - {x: 84, y: -90}
+        - {x: 89, y: -87}
+        - {x: 90, y: -84}
+        - {x: 90, y: 79}
     outline: []
   spritePackingTag: 
   userData: 
