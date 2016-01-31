@@ -33,6 +33,9 @@ public class Monster : MonoBehaviour {
 	public Animator anim;
 	public SpriteRenderer renderer;
 
+	private int MonsterType = 0;
+	private int MonsterVariation = 0;
+	
 	private void OnMonsterSpawned()
 	{
 		if ( MonsterSpawned != null )
@@ -71,12 +74,9 @@ public class Monster : MonoBehaviour {
 				value2++;
 
 			if ( t == RitualToolType.TIJERA )
-				value2++;
+				value3++;
 
 		}	
-
-		int MonsterType = 0;
-		int MonsterVariation = 0;
 
 		if ( value1 == 3 )
 			MonsterType = 0;
@@ -107,11 +107,6 @@ public class Monster : MonoBehaviour {
 
 		if ( value1 == 1 && value2 == 1 && value3 == 1 )
 			MonsterType = 4;
-
-		Debug.Log("Type: " + MonsterType + " Variation: " + MonsterVariation);
-		anim.SetInteger("MonsterType", MonsterType);
-		anim.SetInteger("MonsterVariation", MonsterVariation);
-
 	}
 
 	public void Spawn( Vector3 position, Vector3 dir, MonsterAlignment align)
@@ -134,6 +129,9 @@ public class Monster : MonoBehaviour {
 		isAlive = true;
 		//gameObject.SetActive(true);
 		gameObject.SetActiveRecursively(true);
+		Debug.Log("Type: " + MonsterType + " Variation: " + MonsterVariation);
+		anim.SetInteger("MonsterType", MonsterType);
+		anim.SetInteger("MonsterVariation", MonsterVariation);
 	}
 
 	void OnEnable()
