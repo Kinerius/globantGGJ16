@@ -146,7 +146,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.77, y: 0.37, z: 0.51}
+  m_LocalPosition: {x: 0.37, y: 0.37, z: 1.13}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 463910}
@@ -158,7 +158,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.03, y: -1.4451942, z: -0.03}
+  m_LocalPosition: {x: -9.03, y: -1.21, z: -0.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 486350}
@@ -174,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180762}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: -1.3, y: 0.46, z: 0.93}
+  m_LocalPosition: {x: -1.38, y: 0.46, z: 0.58}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 463910}
@@ -186,7 +186,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.37, y: 0.28, z: -1.05}
+  m_LocalPosition: {x: -0.515, y: 0.28, z: -1.004}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 463910}
@@ -333,7 +333,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300002, guid: b79de67fe8461024396d954ece15877a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -360,7 +360,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b79de67fe8461024396d954ece15877a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -410,12 +410,14 @@ MonoBehaviour:
   - PlayerAction1
   - PlayerAction2
   - PlayerAction3
-  bonfire1: {fileID: 9513726}
-  bonfire2: {fileID: 9573974}
-  bonfire3: {fileID: 9532204}
   button1: {fileID: 9595090}
   button2: {fileID: 9530666}
   button3: {fileID: 9563148}
+  bonfires:
+  - {fileID: 9513726}
+  - {fileID: 9573974}
+  - {fileID: 9532204}
+  player: {fileID: 0}
 --- !u!114 &11484926
 MonoBehaviour:
   m_ObjectHideFlags: 1
