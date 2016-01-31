@@ -63,34 +63,36 @@ public class PlayerEntity : MonoBehaviour {
 			tools.Add(type);
 			if ( tools.Count >= 3 )
 			{
+				if ( player == MonsterAlignment.PLAYER_1 )
+				{
+					spawnDirection = Vector3.right;
+				} else {
+					spawnDirection = -Vector3.right;
+				}
 				_spawnedMonster = ObjectPool.instance.GetObjectForType("Monster", true);
 				_spawnedMonster.SetActive(false);
 				_currentSpawnMonster = _spawnedMonster.GetComponent<Monster>();
-				
+				_currentSpawnMonster.Spawn(spawnPointTransform.position, spawnDirection, player);
 				_currentSpawnMonster.AddValues(tools);
+
 				StartCoroutine(CastingCoroutine(SummonMinion));
 			}
 			//Debug.Log("Added ritual tool: " + type ); 
 		}
+		
+		_spawnedMonster = null;
 	}
 
 	public void SummonMinion()
 	{
-		if ( player == MonsterAlignment.PLAYER_1 )
-		{
-			spawnDirection = Vector3.right;
-		} else {
-			spawnDirection = -Vector3.right;
-		}
-		//Debug.Log("Summoning minion");
-		//GameObject tmpMonster = Instantiate(monsterTemp);
-		_currentSpawnMonster.Spawn(spawnPointTransform.position, spawnDirection, player);
 		_currentSpawnMonster.Enable();
 
 		tools.Clear();
 
 		int random = Random.Range(1,3);
 		SoundManager.Instance.Play("invocacion" + random, 0.8f, Random.Range(0.75f,1.24f));
+
+
 		StartCoroutine( CooldownCoroutine() );
 	}
 
@@ -134,9 +136,9 @@ public class PlayerEntity : MonoBehaviour {
 
 		isOnCooldown = true;
 		circleAnimator.SetBool("isOnCooldown",true);
-		currentCooldown = bonusCooldown * followerList.Count;
-		//Debug.Log("Waiting: " + (data.cooldownTime - bonusCooldown));
-		yield return new WaitForSeconds(data.cooldownTime - bonusCooldown);
+		currentCooldown = data.cooldownBonusPerFollower * followerList.Count;
+		Debug.Log("Waiting: " + (data.cooldownTime - bonusCooldown));
+		yield return new WaitForSeconds(data.cooldownTime - currentCooldown);
 		circleAnimator.SetBool("isOnCooldown",false);
 		isOnCooldown = false;
 	}
@@ -160,12 +162,8 @@ public class PlayerEntity : MonoBehaviour {
 
 	IEnumerator FollowerUpdateCoroutine(System.Action OnFollowerAddition)
 	{
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(1);
 
-		for ( int f = 0 ; f < 5 ; f++)
-		{
-			OnFollowerAddition();
-		}
 
 		float totalPenalty = 0;
 		while ( cultistList.Count > 0 )

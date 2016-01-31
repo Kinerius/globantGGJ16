@@ -18,7 +18,7 @@ public enum FightResult
 
 public class Monster : MonoBehaviour {
 
-	public bool isAlive = false;
+	public bool isAlive = true;
 	public List<RitualToolType> values = null;
 
 	private Vector3 direction = Vector3.zero;
@@ -128,9 +128,10 @@ public class Monster : MonoBehaviour {
 		isAlive = true;
 		//gameObject.SetActive(true);
 		gameObject.SetActiveRecursively(true);
-		Debug.Log("Type: " + MonsterType + " Variation: " + MonsterVariation);
+		
 		anim.SetInteger("MonsterType", MonsterType);
 		anim.SetInteger("MonsterVariation", MonsterVariation);
+		Debug.Log("Type: " + MonsterType + " Variation: " + MonsterVariation);
 	}
 
 	void OnEnable()
@@ -239,10 +240,18 @@ public class Monster : MonoBehaviour {
 
 	public void Kill()
 	{
-		isAlive = false;
+		
 		SoundManager.Instance.Play("demon");
 		//SoundManager.Instance.Play("sacrificio");
+		
+		isAlive = false;
+		anim.SetInteger("MonsterType", -1);
+		anim.SetInteger("MonsterVariation", -1);
+
+		renderer.flipX = false;
+
 		ObjectPool.instance.PoolObject(gameObject);
+		
 	}	
 
 }
