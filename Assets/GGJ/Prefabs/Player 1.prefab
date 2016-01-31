@@ -1087,9 +1087,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputKeys:
-  - Player2Action1
-  - Player2Action2
-  - Player2Action3
+  - PlayerAction1
+  - PlayerAction2
+  - PlayerAction3
   bonfire1: {fileID: 9582696}
   bonfire2: {fileID: 9500252}
   bonfire3: {fileID: 9548664}
