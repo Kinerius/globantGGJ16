@@ -37,37 +37,30 @@ public class SelectSacrifice : MonoBehaviour {
 
     void OnAnimationEnded(Animator anim)
     {
+        anim.SetBool("StartFire", false);
         anim.SetBool("IsOnFire", false);
         anim.SetBool("CatPressedSelect", false);
         anim.SetBool("GoatPressedSelect", false);
-        anim.SetBool("ChickenPressedSelect", false);
+        anim.SetBool("ChickenPressedSelect", false);       
     }
 
     public void RenderUpdateRestar(GameObject obj, bool result, string KeyNameBool)
     {
         Animator anim = obj.GetComponent<Animator>();
-        AnimatorStateInfo animt = anim.GetCurrentAnimatorStateInfo(0);
-        /*if (animt.nameHash == Animator.StringToHash(""))
-        {
-            
-        }*/
-        if (!anim.IsInTransition(0))
 
-            //  if (anim.GetBool(KeyNameBool) != result)
+        if (!anim.IsInTransition(0))
             anim.SetBool(KeyNameBool, result);
     }
 
     IEnumerator AnimationUpdateCoroutine(Animator anim, System.Action<Animator> OnAnimationEnded = null)
     {
-        //if (anim.GetBool())
         while (!anim.GetCurrentAnimatorStateInfo(0).IsName("End"))
         {
             yield return new WaitForEndOfFrame();
         }
         
         if (OnAnimationEnded != null)
-            OnAnimationEnded(anim);
-        
+            OnAnimationEnded(anim);        
     }
 
 
@@ -80,47 +73,49 @@ public class SelectSacrifice : MonoBehaviour {
 
             //Load Fire
            
-            switch (poolAnimals[0])
-            {
-                case 1:
-                    RenderUpdate(bonfire1, true, "CatPressedSelect");
-                    break;
-                case 2:
-                    RenderUpdate(bonfire1, true, "GoatPressedSelect");
-                    break;
-                case 3:
-                    RenderUpdate(bonfire1, true, "ChickenPressedSelect");
-                    break;
-            }
+            //switch (poolAnimals[0])
+            //{
+            //    case 1:
+            //        RenderUpdate(bonfire1, true, "CatPressedSelect");
+            //        break;
+            //    case 2:
+            //        RenderUpdate(bonfire1, true, "GoatPressedSelect");
+            //        break;
+            //    case 3:
+            //        RenderUpdate(bonfire1, true, "ChickenPressedSelect");
+            //        break;
+            //}
                        
-            switch (poolAnimals[1])
-            {
-                case 1:
-                    RenderUpdate(bonfire2, true, "CatPressedSelect");
-                    break;
-                case 2:
-                    RenderUpdate(bonfire2, true, "GoatPressedSelect");
-                    break;
-                case 3:
-                    RenderUpdate(bonfire2, true, "ChickenPressedSelect");
-                    break;
-            }
+            //switch (poolAnimals[1])
+            //{
+            //    case 1:
+            //        RenderUpdate(bonfire2, true, "CatPressedSelect");
+            //        break;
+            //    case 2:
+            //        RenderUpdate(bonfire2, true, "GoatPressedSelect");
+            //        break;
+            //    case 3:
+            //        RenderUpdate(bonfire2, true, "ChickenPressedSelect");
+            //        break;
+            //}
                       
-            switch (poolAnimals[2])
-            {
-                case 1:
-                    RenderUpdate(bonfire3, true, "CatPressedSelect");
-                    break;
-                case 2:
-                    RenderUpdate(bonfire3, true, "GoatPressedSelect");
-                    break;
-                case 3:
-                    RenderUpdate(bonfire3, true, "ChickenPressedSelect");
-                    break;
-            }
+            //switch (poolAnimals[2])
+            //{
+            //    case 1:
+            //        RenderUpdate(bonfire3, true, "CatPressedSelect");
+            //        break;
+            //    case 2:
+            //        RenderUpdate(bonfire3, true, "GoatPressedSelect");
+            //        break;
+            //    case 3:
+            //        RenderUpdate(bonfire3, true, "ChickenPressedSelect");
+            //        break;
+            //}
 
+            RenderUpdate(bonfire1, true, "StartFire");
+            RenderUpdate(bonfire2, true, "StartFire");
+            RenderUpdate(bonfire3, true, "StartFire");
           
-
             poolAnimals.Clear();
         }
 
@@ -133,6 +128,22 @@ public class SelectSacrifice : MonoBehaviour {
         if (Input.GetButtonDown(InputKeys[0]))
         {          
             button1.SetBool("Pressed", true);
+
+            int result = poolAnimals.Count + 1;
+
+            switch (result)
+            {
+                case 1:
+                    RenderUpdate(bonfire1, true, "CatPressedSelect");
+                    break;
+                case 2:
+                    RenderUpdate(bonfire2, true, "CatPressedSelect");
+                    break;
+                case 3:
+                    RenderUpdate(bonfire3, true, "CatPressedSelect");
+                    break;
+            }
+
             SacrificePool(1);
 
         }
@@ -144,6 +155,22 @@ public class SelectSacrifice : MonoBehaviour {
         if (Input.GetButtonDown(InputKeys[1]))
         {
             button2.SetBool("Pressed", true);
+
+            int result = poolAnimals.Count + 1;
+
+            switch (result)
+            {
+                case 1:
+                    RenderUpdate(bonfire1, true, "GoatPressedSelect");
+                    break;
+                case 2:
+                    RenderUpdate(bonfire2, true, "GoatPressedSelect");
+                    break;
+                case 3:
+                    RenderUpdate(bonfire3, true, "GoatPressedSelect");
+                    break;
+            }
+
             SacrificePool(2);
         }
         else if (Input.GetButtonUp(InputKeys[1]))
@@ -154,6 +181,22 @@ public class SelectSacrifice : MonoBehaviour {
         if (Input.GetButtonDown(InputKeys[2]))
         {
             button3.SetBool("Pressed", true);
+
+            int result = poolAnimals.Count + 1;
+
+            switch (result)
+            {
+                case 1:
+                    RenderUpdate(bonfire1, true, "ChickenPressedSelect");
+                    break;
+                case 2:
+                    RenderUpdate(bonfire2, true, "ChickenPressedSelect");
+                    break;
+                case 3:
+                    RenderUpdate(bonfire3, true, "ChickenPressedSelect");
+                    break;
+            }
+
             SacrificePool(3);
 
         }

@@ -57,6 +57,8 @@ public class Monster : MonoBehaviour {
 		{
 			values.Add(t);
 		}	
+
+
 	}
 
 	public void Spawn( Vector3 position, Vector3 dir, MonsterAlignment align)
