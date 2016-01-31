@@ -86,7 +86,7 @@ public class ObjectPool : MonoBehaviour
     /// <param name='onlyPooled'>
     /// If true, it will only return an object if there is one currently pooled.
     /// </param>
-    public GameObject GetObjectForType ( string objectType , bool onlyPooled )
+    public GameObject GetObjectForType ( string objectType , bool onlyPooled)
     {
         for(int i=0; i<objectPrefabs.Length; i++)
         {
