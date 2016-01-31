@@ -53,6 +53,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3501875922f7345429eecfdae78b1a0d, type: 3}
   - {fileID: 8300000, guid: 56bf511b57cf08e43aa9d477677f614d, type: 3}
   - {fileID: 8300000, guid: 3ad238a5816158b4487693d749042e0f, type: 3}
+  - {fileID: 8300000, guid: 748e1f1ff312bd9448335daf2d5c3e96, type: 3}
+  - {fileID: 8300000, guid: 11bce774ff9797b4191d5d1b16aa3d79, type: 3}
+  - {fileID: 8300000, guid: d6f6cb03d3b33f144a0ced457600e501, type: 3}
+  - {fileID: 8300000, guid: db5c8eac2b486dc4792aa21c117da73b, type: 3}
   maxSimlutSfxOfOneType: 4
   numberOfChannels: 16
 --- !u!1001 &100100000
