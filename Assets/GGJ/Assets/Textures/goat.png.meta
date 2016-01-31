@@ -1,9 +1,14 @@
 fileFormatVersion: 2
 guid: 8eae450815434e24cb01c2a45f91f4e0
-timeCreated: 1454210831
+timeCreated: 1454237236
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: goat_0
+    21300002: goat_1
+    21300004: goat_2
+    21300006: goat_3
+    21300008: goat_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,26 +35,121 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
-  nPOTScale: 1
+    wrapMode: 1
+  nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
-  alphaIsTransparency: 0
-  textureType: -1
+  alphaIsTransparency: 1
+  textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: goat_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 65
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 23}
+        - {x: -26.5, y: 16}
+        - {x: -29.5, y: 5}
+        - {x: -13.5, y: -29}
+        - {x: 27.5, y: -29}
+        - {x: 30.5, y: -18}
+        - {x: 30.5, y: 19}
+        - {x: 15.5, y: 23}
+    - name: goat_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 0
+        width: 65
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.5, y: 21}
+        - {x: -30.5, y: -8}
+        - {x: -21.5, y: -29}
+        - {x: 27.5, y: -29}
+        - {x: 27.5, y: 21}
+    - name: goat_2
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 65
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 29}
+        - {x: -27.5, y: 15}
+        - {x: -27.5, y: 5}
+        - {x: -12.5, y: -29}
+        - {x: 20.5, y: -29}
+        - {x: 29.5, y: -25}
+        - {x: 29.5, y: 6}
+        - {x: 10.5, y: 29}
+    - name: goat_3
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 0
+        width: 65
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22.5, y: 29}
+        - {x: -18.5, y: 29}
+        - {x: -29.5, y: 10}
+        - {x: -29.5, y: -1}
+        - {x: -14.5, y: -29}
+        - {x: 21.5, y: -29}
+        - {x: 25.5, y: -27}
+        - {x: 28.5, y: -25}
+        - {x: 30.5, y: -11}
+        - {x: 30.5, y: 13}
+    - name: goat_4
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 65
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24.5, y: 7}
+        - {x: 18.5, y: 8}
+        - {x: -20.5, y: 8}
+        - {x: -31.5, y: -13}
+        - {x: -31.5, y: -29}
+        - {x: 27.5, y: -29}
+        - {x: 30.5, y: -17}
+        - {x: 30.5, y: -9}
+        - {x: 28.5, y: -5}
     outline: []
   spritePackingTag: 
   userData: 
