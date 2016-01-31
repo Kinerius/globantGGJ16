@@ -18,6 +18,8 @@ public enum FightResult
 
 public class Monster : MonoBehaviour {
 
+    public bool Attack = false;
+    
 	public bool isAlive = false;
 	public List<RitualToolType> values = null;
 
