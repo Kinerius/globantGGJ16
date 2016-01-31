@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4d3fb180c4430074fa294efd23394758
-timeCreated: 1454218913
+guid: d50ebfa849000e0488aadf025fe74e21
+timeCreated: 1454212661
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -30,10 +30,10 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -62,7 +62,7 @@ TextureImporter:
         width: 50
         height: 58
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -11, y: 29}
@@ -81,7 +81,7 @@ TextureImporter:
         width: 50
         height: 58
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 21, y: 29}
@@ -94,45 +94,47 @@ TextureImporter:
     - name: demon3base_2
       rect:
         serializedVersion: 2
-        x: 99
+        x: 100
         y: 0
         width: 50
         height: 58
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -22, y: 20}
-        - {x: -25, y: 5}
-        - {x: -25, y: -29}
-        - {x: 5, y: -29}
-        - {x: 24, y: -3}
-        - {x: 24, y: 13}
-        - {x: 11, y: 20}
-      - - {x: 22, y: 10}
-        - {x: 24, y: 8}
+      - - {x: 14, y: 20}
+        - {x: -11, y: 20}
+        - {x: -18, y: 17}
+        - {x: -25, y: 2}
+        - {x: -25, y: -28}
+        - {x: -23, y: -29}
+        - {x: 3, y: -29}
+        - {x: 23, y: -3}
+        - {x: 23, y: 8}
+        - {x: 20, y: 17}
+      - - {x: 21, y: 12}
+        - {x: 21, y: 10}
+        - {x: 23, y: 8}
         - {x: 25, y: 8}
         - {x: 25, y: 14}
-        - {x: 22, y: 13}
+        - {x: 23, y: 14}
     - name: demon3base_3
       rect:
         serializedVersion: 2
-        x: 149
+        x: 150
         y: 0
         width: 50
         height: 58
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 10, y: 29}
-        - {x: -16, y: 29}
+      - - {x: -14, y: 29}
         - {x: -25, y: 26}
-        - {x: -25, y: -26}
-        - {x: -24, y: -29}
+        - {x: -25, y: -29}
         - {x: 14, y: -29}
-        - {x: 15, y: -26}
-        - {x: 15, y: 27}
+        - {x: 14, y: 28}
+        - {x: 13, y: 29}
     outline: []
   spritePackingTag: 
   userData: 

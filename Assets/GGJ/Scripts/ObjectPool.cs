@@ -31,12 +31,19 @@ public class ObjectPool : MonoBehaviour
    
     void Awake ()
     {
+		if ( instance != null )
+		{
+			Destroy(gameObject);
+			return;
+		}
         instance = this;
     }
    
     // Use this for initialization
     void Start ()
     {
+		Debug.Log("Name: " + gameObject.name);
+
         containerObject = new GameObject("ObjectPool");
        
         //Loop through the object prefabs and make a new list for each one.
@@ -92,7 +99,7 @@ public class ObjectPool : MonoBehaviour
                     GameObject pooledObject = pooledObjects[i][0];
                     pooledObjects[i].RemoveAt(0);
                     pooledObject.transform.parent = null;
-                    pooledObject.SetActiveRecursively(true);
+                    pooledObject.SetActive(true);
                    
                     return pooledObject;
                    

@@ -21,7 +21,7 @@ public class PlayerEntity : MonoBehaviour {
 
 	public GameObject monsterTemp = null;
 	public Transform followerSpawnPoint = null;
-	
+	public Animator circleAnimator = null;
 
 	List<RitualToolType> tools;
 
@@ -37,10 +37,13 @@ public class PlayerEntity : MonoBehaviour {
 	private float bonusCooldown = 0;
 	private float currentPenalization = 0;
 	
+	private GameObject _spawnedMonster = null;
+	private Monster _currentSpawnMonster = null;
 
 	void Start () {
 		tools = new List<RitualToolType>();
 		followerList = new List<GameObject>();
+		StartCoroutine(FollowerUpdateCoroutine(OnFollowerAddition));
 	}
 
 	public void AddRitualTool (RitualToolType type)
@@ -60,6 +63,11 @@ public class PlayerEntity : MonoBehaviour {
 			tools.Add(type);
 			if ( tools.Count >= 3 )
 			{
+				_spawnedMonster = ObjectPool.instance.GetObjectForType("Monster", true);
+				_spawnedMonster.SetActive(false);
+				_currentSpawnMonster = _spawnedMonster.GetComponent<Monster>();
+				
+				_currentSpawnMonster.AddValues(tools);
 				StartCoroutine(CastingCoroutine(SummonMinion));
 			}
 			//Debug.Log("Added ritual tool: " + type ); 
@@ -76,11 +84,9 @@ public class PlayerEntity : MonoBehaviour {
 		}
 		Debug.Log("Summoning minion");
 		//GameObject tmpMonster = Instantiate(monsterTemp);
-		GameObject tmpMonster = ObjectPool.instance.GetObjectForType("Monster", true);
-		tmpMonster.SetActive(false);
-		Monster tmpMonsterScript = tmpMonster.GetComponent<Monster>();
-		tmpMonsterScript.Spawn(spawnPointTransform.position, spawnDirection, player);
-		tmpMonsterScript.AddValues(tools);
+		_currentSpawnMonster.Spawn(spawnPointTransform.position, spawnDirection, player);
+		_currentSpawnMonster.Enable();
+
 		tools.Clear();
 		StartCoroutine( CooldownCoroutine() );
 	}
@@ -124,11 +130,11 @@ public class PlayerEntity : MonoBehaviour {
 			yield break;
 
 		isOnCooldown = true;
-		
+		circleAnimator.SetBool("isOnCooldown",true);
 		currentCooldown = bonusCooldown * followerList.Count;
 		Debug.Log("Waiting: " + (data.cooldownTime - bonusCooldown));
 		yield return new WaitForSeconds(data.cooldownTime - bonusCooldown);
-		
+		circleAnimator.SetBool("isOnCooldown",false);
 		isOnCooldown = false;
 	}
 
@@ -138,41 +144,54 @@ public class PlayerEntity : MonoBehaviour {
 			yield break;
 
 		isCasting = true;
-
+		circleAnimator.SetBool("isCasting",true);
 		// play fire animation here
 		Debug.Log("Casting");
 		yield return new WaitForSeconds(data.castTime);
 
 		OnCastingComplete();
-
+		circleAnimator.SetBool("isCasting",false);
 		isCasting = false;
 	}
 
 	IEnumerator FollowerUpdateCoroutine(System.Action OnFollowerAddition)
 	{
+		yield return new WaitForSeconds(5);
+
+		for ( int f = 0 ; f < 5 ; f++)
+		{
+			OnFollowerAddition();
+		}
+
+		float totalPenalty = 0;
 		while ( cultistList.Count > 0 )
 		{
-			yield return new WaitForSeconds(data.followerTimer + data.followerPenalization * currentPenalization);
+			totalPenalty = data.followerPenalization * currentPenalization;
+			currentPenalization = 0;
+			yield return new WaitForSeconds(data.followerTimer + totalPenalty);
 			if (OnFollowerAddition != null)
 			{
 				OnFollowerAddition();
 			}
-			currentPenalization = 0;
+			
 			yield return new WaitForEndOfFrame();
 		}
 	}
 
 	public void OnFollowerAddition()
 	{
-		Debug.Log("Follower added");
+		//Debug.Log("Follower added");
 		GameObject follower = ObjectPool.instance.GetObjectForType("Follower", true);
-		follower.transform.position = followerSpawnPoint.position;
+		Vector3 random = new Vector3(Random.Range(-2,2),0,Random.Range(-2,2));
+		follower.transform.position = followerSpawnPoint.position+random;
 		followerList.Add ( follower );
 	}
 
 	public void SacrifyFollower()
 	{
 		Debug.Log("SacrifyFollower");
+		if (_currentSpawnMonster != null)
+			_currentSpawnMonster.AddPower();
 		currentPenalization += 1;
 		KillOneFollower();
 	}
@@ -183,7 +202,10 @@ public class PlayerEntity : MonoBehaviour {
 		{
 			if( f.activeInHierarchy )
 			{
+				SoundManager.Instance.Play("sacrificio");
+				followerList.Remove(f);
 				ObjectPool.instance.PoolObject(f);
+				
 				return;
 			}
 		}

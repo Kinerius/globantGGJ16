@@ -30,7 +30,7 @@ public class Monster : MonoBehaviour {
 	public MonsterAlignment alignment = MonsterAlignment.PLAYER_1;
 	private string MonsterTag = "Monster";
 	private string SpawnTag = "Spawn";
-
+	public float power = 0;
 	private void OnMonsterSpawned()
 	{
 		if ( MonsterSpawned != null )
@@ -44,6 +44,12 @@ public class Monster : MonoBehaviour {
 
 	}
 
+	public void AddPower()
+	{
+		Debug.Log("EMPOWER");
+		power += 1;
+	}
+
 	public void AddValues( List<RitualToolType> tool ) 
 	{
 		values = new List<RitualToolType>();
@@ -55,13 +61,20 @@ public class Monster : MonoBehaviour {
 
 	public void Spawn( Vector3 position, Vector3 dir, MonsterAlignment align)
 	{
-		gameObject.SetActive(true);
+		//gameObject.SetActive(true);
 		alignment = align;
 		direction = dir;
 		this.transform.position = position;
-		isAlive = true;
-		Debug.Log(alignment);
+		//isAlive = true;
+		//Debug.Log(alignment);
 		tag = MonsterTag + (int)alignment;
+	}
+
+	public void Enable()
+	{
+		isAlive = true;
+		//gameObject.SetActive(true);
+		gameObject.SetActiveRecursively(true);
 	}
 
 	void OnEnable()
@@ -78,7 +91,7 @@ public class Monster : MonoBehaviour {
 		transform.position += direction * movementSpeed * Time.deltaTime;
 	}
 
-	FightResult Fight(List<RitualToolType> tools)
+	FightResult Fight(List<RitualToolType> tools, float epower)
 	{
 		int value1 = 0;
 		int value2 = 0;
@@ -121,6 +134,12 @@ public class Monster : MonoBehaviour {
 		} else if (value1 < value2){
 			return FightResult.DEFEAT;
 		}
+		if ( power > epower)
+		{
+			return FightResult.WIN;
+		} else if (power < epower) {
+			return FightResult.DEFEAT;
+		}
 		return FightResult.TIE;
 	}
 
@@ -136,7 +155,7 @@ public class Monster : MonoBehaviour {
 		Monster enemy = collision.gameObject.GetComponent<Monster>();
 		if (enemy != null && enemy.alignment != alignment && enemy.isAlive && isAlive)
 		{
-			FightResult result = Fight(enemy.values);
+			FightResult result = Fight(enemy.values, enemy.power);
 			if ( result == FightResult.WIN )
 			{
 				enemy.Kill();
@@ -165,7 +184,7 @@ public class Monster : MonoBehaviour {
 	public void Kill()
 	{
 		isAlive = false;
-		SoundManager.Instance.Play("sacrificio");
+		//SoundManager.Instance.Play("sacrificio");
 		ObjectPool.instance.PoolObject(gameObject);
 	}	
 

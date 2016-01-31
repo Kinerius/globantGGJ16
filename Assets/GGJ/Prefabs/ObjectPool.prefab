@@ -41,7 +41,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefabs:
   - {fileID: 173322, guid: e5ed8ac2406209e4cb4e0338aecc8ee1, type: 2}
-  amountToBuffer: 32000000
+  - {fileID: 163492, guid: ab8f236b3abd9d340bdb787e35744679, type: 2}
+  amountToBuffer: 3200000064000000
   defaultBufferAmount: 3
 --- !u!1001 &100100000
 Prefab:
