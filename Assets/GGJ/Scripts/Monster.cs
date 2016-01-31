@@ -132,6 +132,12 @@ public class Monster : MonoBehaviour {
 		anim.SetInteger("MonsterType", MonsterType);
 		anim.SetInteger("MonsterVariation", MonsterVariation);
 		Debug.Log("Type: " + MonsterType + " Variation: " + MonsterVariation);
+
+		if (power > 0)
+		{
+			GameObject aura = ObjectPool.instance.GetObjectForType("powerAura", true);
+			aura.GetComponent<Effect>().parent = this.transform;
+		}
 	}
 
 	void OnEnable()
@@ -288,8 +294,10 @@ public class Monster : MonoBehaviour {
 
 		renderer.flipX = false;
 
+		GameObject explosion = ObjectPool.instance.GetObjectForType("deathParticle", true);
+		explosion.transform.position = transform.position;
+
 		ObjectPool.instance.PoolObject(gameObject);
-		
 	}	
 
 }
