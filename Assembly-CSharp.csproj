@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AnimationMonster.cs" />
      <Compile Include="Assets\BrightnessCycle.cs" />
      <Compile Include="Assets\GGJ\Scripts\Cultist.cs" />
      <Compile Include="Assets\GGJ\Scripts\Effect.cs" />
@@ -53,6 +54,7 @@
      <Compile Include="Assets\GGJ\Scripts\Monster.cs" />
      <Compile Include="Assets\GGJ\Scripts\ObjectPool.cs" />
      <Compile Include="Assets\GGJ\Scripts\PlayerEntity.cs" />
+     <Compile Include="Assets\GGJ\Scripts\SelectSacrifice.cs" />
      <Compile Include="Assets\GGJ\Scripts\SoundManager.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
