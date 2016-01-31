@@ -45,7 +45,8 @@ MonoBehaviour:
   - {fileID: 168660, guid: 65ebeb8587c363c49b73b54f424054f9, type: 2}
   - {fileID: 163726, guid: 53ae156b014b33c478820108bd889167, type: 2}
   - {fileID: 160994, guid: 3a916317f3633364c856d59b2218b529, type: 2}
-  amountToBuffer: 0f00000014000000140000000400000005000000
+  - {fileID: 137468, guid: 7cb5195e6772e61498f54f68dfaf5a73, type: 2}
+  amountToBuffer: 0f000000140000001400000004000000050000000a000000
   defaultBufferAmount: 3
 --- !u!1001 &100100000
 Prefab:

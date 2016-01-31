@@ -268,6 +268,18 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1781553864}
+    - target: {fileID: 21290600, guid: 21591ab7d74eff142a1ef5f9b30b65b1, type: 2}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 21244274, guid: 21591ab7d74eff142a1ef5f9b30b65b1, type: 2}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 21222544, guid: 21591ab7d74eff142a1ef5f9b30b65b1, type: 2}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21591ab7d74eff142a1ef5f9b30b65b1, type: 2}
   m_IsPrefabParent: 0
@@ -386,10 +398,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8245742, guid: f178c67c731071d448ae1f208ddc1581, type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: c55a1c1dbfe41394c8567a6790b532eb, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f178c67c731071d448ae1f208ddc1581, type: 2}
   m_IsPrefabParent: 0
@@ -529,6 +537,18 @@ Prefab:
     - target: {fileID: 177474, guid: a862a2ea1f1cbd749b3662232721b856, type: 2}
       propertyPath: m_Name
       value: SelectSacrifice2
+      objectReference: {fileID: 0}
+    - target: {fileID: 21229454, guid: a862a2ea1f1cbd749b3662232721b856, type: 2}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 21286690, guid: a862a2ea1f1cbd749b3662232721b856, type: 2}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 21273858, guid: a862a2ea1f1cbd749b3662232721b856, type: 2}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a862a2ea1f1cbd749b3662232721b856, type: 2}

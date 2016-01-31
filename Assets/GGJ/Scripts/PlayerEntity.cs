@@ -150,6 +150,10 @@ public class PlayerEntity : MonoBehaviour {
 
 		isCasting = true;
 		circleAnimator.SetBool("isCasting",true);
+
+		GameObject particle = ObjectPool.instance.GetObjectForType("sumonParticle",true);
+		particle.transform.position = spawnPointTransform.position;
+		particle.GetComponent<Effect>().disableTime = data.castTime;
 		// play fire animation here
 		//Debug.Log("Casting");
 		yield return new WaitForSeconds(data.castTime);
