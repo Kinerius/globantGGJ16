@@ -215,6 +215,7 @@ public class Monster : MonoBehaviour {
 			FightResult result = Fight(enemy.values, enemy.power);
 			if ( result == FightResult.WIN )
 			{
+                RenderUpdate(true, "StartAtack");
 				enemy.Kill();
 			} else if (result == FightResult.DEFEAT )
 			{
@@ -224,8 +225,45 @@ public class Monster : MonoBehaviour {
 				this.Kill();
 			}
 		}
-
 	}
+
+
+
+    public void RenderUpdate(bool result, string KeyNameBool)
+    {
+        if (anim.GetBool("StartAtack"))
+        {
+            anim.SetBool("FinishAtack", true);
+            anim.SetBool("StartAtack", false);
+        }
+        else
+        {
+            anim.SetBool("FinishAtack", false);
+            anim.SetBool("StartAtack", true);
+        }
+
+        //anim.SetBool("FinishAtack", true);
+        //anim.SetBool(KeyNameBool, result);
+       // StartCoroutine(AnimationUpdateCoroutine(anim, OnAnimationEnded));
+    }
+
+    void OnAnimationEnded(Animator anim)
+    {
+        anim.SetBool("StartAtack", false);
+        anim.SetBool("FinishAtack", true);
+    }
+    
+    IEnumerator AnimationUpdateCoroutine(Animator anim, System.Action<Animator> OnAnimationEnded = null)
+    {
+        while (!anim.GetCurrentAnimatorStateInfo(0).IsName("Demon1Rojo"))
+        {            
+            yield return new WaitForEndOfFrame();
+        }
+
+        if (OnAnimationEnded != null)
+            OnAnimationEnded(anim);
+    }
+
 
 	void OnTriggerEnter(Collider other) {
 		if ( !other.gameObject.CompareTag(SpawnTag+(int)alignment ))
