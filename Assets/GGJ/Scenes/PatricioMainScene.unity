@@ -455,6 +455,50 @@ Prefab:
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 483836, guid: f178c67c731071d448ae1f208ddc1581, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -10.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 483836, guid: f178c67c731071d448ae1f208ddc1581, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 21.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 483836, guid: f178c67c731071d448ae1f208ddc1581, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.1816511
+      objectReference: {fileID: 0}
+    - target: {fileID: 483836, guid: f178c67c731071d448ae1f208ddc1581, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.98336303
+      objectReference: {fileID: 0}
+    - target: {fileID: 454358, guid: f178c67c731071d448ae1f208ddc1581, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.028678214
+      objectReference: {fileID: 0}
+    - target: {fileID: 454358, guid: f178c67c731071d448ae1f208ddc1581, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.8789047
+      objectReference: {fileID: 0}
+    - target: {fileID: 454358, guid: f178c67c731071d448ae1f208ddc1581, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.00550664
+      objectReference: {fileID: 0}
+    - target: {fileID: 454358, guid: f178c67c731071d448ae1f208ddc1581, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.47610277
+      objectReference: {fileID: 0}
+    - target: {fileID: 10818156, guid: f178c67c731071d448ae1f208ddc1581, type: 2}
+      propertyPath: m_Color.r
+      value: 0.5294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 10818156, guid: f178c67c731071d448ae1f208ddc1581, type: 2}
+      propertyPath: m_Color.g
+      value: 0.40617356
+      objectReference: {fileID: 0}
+    - target: {fileID: 10818156, guid: f178c67c731071d448ae1f208ddc1581, type: 2}
+      propertyPath: m_Color.b
+      value: 0.07006921
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f178c67c731071d448ae1f208ddc1581, type: 2}
   m_IsPrefabParent: 0
