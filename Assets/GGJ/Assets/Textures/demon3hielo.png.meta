@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: fc26e6a45eee19b4b805c637ba3a1e4b
-timeCreated: 1454218783
+guid: a87944d1cdf54ba43883dea231d230b9
+timeCreated: 1454222140
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: demon1azul_0
-    21300002: demon1azul_1
-    21300004: demon1azul_2
-    21300006: demon1azul_3
+    21300000: demon3hielo_0
+    21300002: demon3hielo_1
+    21300004: demon3hielo_2
+    21300006: demon3hielo_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -30,11 +30,11 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: 0
-    aniso: -1
+    filterMode: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -54,7 +54,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: demon1azul_0
+    - name: demon3hielo_0
       rect:
         serializedVersion: 2
         x: 0
@@ -65,16 +65,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 14, y: 29}
-        - {x: -19, y: 29}
-        - {x: -25, y: 11}
-        - {x: -25, y: -17}
-        - {x: -17, y: -29}
-        - {x: -8, y: -29}
-        - {x: 23, y: -12}
-        - {x: 25, y: -9}
-        - {x: 25, y: 16}
-    - name: demon1azul_1
+      - - {x: -11, y: 29}
+        - {x: -19, y: 24}
+        - {x: -25, y: 16}
+        - {x: -25, y: -29}
+        - {x: 14, y: -29}
+        - {x: 24, y: -7}
+        - {x: 24, y: 22}
+        - {x: 21, y: 29}
+    - name: demon3hielo_1
       rect:
         serializedVersion: 2
         x: 50
@@ -85,16 +84,40 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -25, y: 29}
+      - - {x: 21, y: 29}
+        - {x: -16, y: 29}
+        - {x: -25, y: 8}
+        - {x: -25, y: -29}
+        - {x: 13, y: -29}
+        - {x: 23, y: 5}
+        - {x: 23, y: 23}
+    - name: demon3hielo_2
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 0
+        width: 50
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 20}
+        - {x: -25, y: 5}
         - {x: -25, y: -29}
         - {x: 5, y: -29}
-        - {x: 25, y: -20}
-        - {x: 25, y: 26}
-        - {x: 24, y: 29}
-    - name: demon1azul_2
+        - {x: 24, y: -3}
+        - {x: 24, y: 13}
+        - {x: 11, y: 20}
+      - - {x: 22, y: 10}
+        - {x: 24, y: 8}
+        - {x: 25, y: 8}
+        - {x: 25, y: 14}
+        - {x: 22, y: 13}
+    - name: demon3hielo_3
       rect:
         serializedVersion: 2
-        x: 100
+        x: 149
         y: 0
         width: 50
         height: 58
@@ -102,33 +125,14 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -17, y: 29}
-        - {x: -25, y: 10}
-        - {x: -25, y: -18}
-        - {x: -22, y: -29}
-        - {x: -7, y: -29}
-        - {x: 25, y: -4}
-        - {x: 25, y: 27}
-        - {x: 22, y: 29}
-    - name: demon1azul_3
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 0
-        width: 50
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -17, y: 29}
-        - {x: -25, y: 10}
-        - {x: -25, y: -15}
-        - {x: -17, y: -29}
-        - {x: 25, y: -29}
-        - {x: 25, y: 20}
-        - {x: 22, y: 27}
-        - {x: 16, y: 29}
+      - - {x: 10, y: 29}
+        - {x: -16, y: 29}
+        - {x: -25, y: 26}
+        - {x: -25, y: -26}
+        - {x: -24, y: -29}
+        - {x: 14, y: -29}
+        - {x: 15, y: -26}
+        - {x: 15, y: 27}
     outline: []
   spritePackingTag: 
   userData: 

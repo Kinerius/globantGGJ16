@@ -1,17 +1,18 @@
 fileFormatVersion: 2
-guid: fc26e6a45eee19b4b805c637ba3a1e4b
-timeCreated: 1454218783
+guid: bd6c6dc16a0b06c4ab49ef0384b424ff
+timeCreated: 1454203109
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: demon1azul_0
-    21300002: demon1azul_1
-    21300004: demon1azul_2
-    21300006: demon1azul_3
+    21300000: goat_0
+    21300002: goat_1
+    21300004: goat_2
+    21300006: goat_3
+    21300008: goat_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -30,11 +31,11 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: 0
-    aniso: -1
+    filterMode: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -54,81 +55,101 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: demon1azul_0
+    - name: goat_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 50
+        width: 65
         height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 14, y: 29}
-        - {x: -19, y: 29}
-        - {x: -25, y: 11}
-        - {x: -25, y: -17}
-        - {x: -17, y: -29}
-        - {x: -8, y: -29}
-        - {x: 23, y: -12}
-        - {x: 25, y: -9}
-        - {x: 25, y: 16}
-    - name: demon1azul_1
+      - - {x: -21.5, y: 23}
+        - {x: -26.5, y: 16}
+        - {x: -29.5, y: 5}
+        - {x: -13.5, y: -29}
+        - {x: 27.5, y: -29}
+        - {x: 30.5, y: -18}
+        - {x: 30.5, y: 19}
+        - {x: 15.5, y: 23}
+    - name: goat_1
       rect:
         serializedVersion: 2
-        x: 50
+        x: 65
         y: 0
-        width: 50
+        width: 65
         height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -25, y: 29}
-        - {x: -25, y: -29}
-        - {x: 5, y: -29}
-        - {x: 25, y: -20}
-        - {x: 25, y: 26}
-        - {x: 24, y: 29}
-    - name: demon1azul_2
+      - - {x: -30.5, y: 21}
+        - {x: -30.5, y: -8}
+        - {x: -21.5, y: -29}
+        - {x: 27.5, y: -29}
+        - {x: 27.5, y: 21}
+    - name: goat_2
       rect:
         serializedVersion: 2
-        x: 100
+        x: 130
         y: 0
-        width: 50
+        width: 65
         height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -17, y: 29}
-        - {x: -25, y: 10}
-        - {x: -25, y: -18}
-        - {x: -22, y: -29}
-        - {x: -7, y: -29}
-        - {x: 25, y: -4}
-        - {x: 25, y: 27}
-        - {x: 22, y: 29}
-    - name: demon1azul_3
+      - - {x: -18.5, y: 29}
+        - {x: -27.5, y: 15}
+        - {x: -27.5, y: 5}
+        - {x: -12.5, y: -29}
+        - {x: 20.5, y: -29}
+        - {x: 29.5, y: -25}
+        - {x: 29.5, y: 6}
+        - {x: 10.5, y: 29}
+    - name: goat_3
       rect:
         serializedVersion: 2
-        x: 150
+        x: 195
         y: 0
-        width: 50
+        width: 65
         height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -17, y: 29}
-        - {x: -25, y: 10}
-        - {x: -25, y: -15}
-        - {x: -17, y: -29}
-        - {x: 25, y: -29}
-        - {x: 25, y: 20}
-        - {x: 22, y: 27}
-        - {x: 16, y: 29}
+      - - {x: 22.5, y: 29}
+        - {x: -18.5, y: 29}
+        - {x: -29.5, y: 10}
+        - {x: -29.5, y: -1}
+        - {x: -14.5, y: -29}
+        - {x: 21.5, y: -29}
+        - {x: 25.5, y: -27}
+        - {x: 28.5, y: -25}
+        - {x: 30.5, y: -11}
+        - {x: 30.5, y: 13}
+    - name: goat_4
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 65
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24.5, y: 7}
+        - {x: 18.5, y: 8}
+        - {x: -20.5, y: 8}
+        - {x: -31.5, y: -13}
+        - {x: -31.5, y: -29}
+        - {x: 27.5, y: -29}
+        - {x: 30.5, y: -17}
+        - {x: 30.5, y: -9}
+        - {x: 28.5, y: -5}
     outline: []
   spritePackingTag: 
   userData: 
