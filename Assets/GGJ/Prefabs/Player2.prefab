@@ -302,7 +302,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.282, y: 1.804, z: 0.71}
+  m_LocalPosition: {x: -0.45, y: 1.498, z: 0.24}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 457278}
@@ -655,6 +655,7 @@ MonoBehaviour:
   gm: {fileID: 0}
   monsterTemp: {fileID: 173322, guid: e5ed8ac2406209e4cb4e0338aecc8ee1, type: 2}
   followerSpawnPoint: {fileID: 423422}
+  circleAnimator: {fileID: 9593276}
   data:
     castTime: 0
     cooldownTime: 0

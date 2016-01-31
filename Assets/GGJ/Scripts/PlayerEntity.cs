@@ -21,7 +21,7 @@ public class PlayerEntity : MonoBehaviour {
 
 	public GameObject monsterTemp = null;
 	public Transform followerSpawnPoint = null;
-	
+	public Animator circleAnimator = null;
 
 	List<RitualToolType> tools;
 
@@ -43,11 +43,6 @@ public class PlayerEntity : MonoBehaviour {
 	void Start () {
 		tools = new List<RitualToolType>();
 		followerList = new List<GameObject>();
-
-		for ( int f = 0 ; f < 5 ; f++)
-		{
-			OnFollowerAddition();
-		}
 		StartCoroutine(FollowerUpdateCoroutine(OnFollowerAddition));
 	}
 
@@ -135,11 +130,11 @@ public class PlayerEntity : MonoBehaviour {
 			yield break;
 
 		isOnCooldown = true;
-		
+		circleAnimator.SetBool("isOnCooldown",true);
 		currentCooldown = bonusCooldown * followerList.Count;
 		Debug.Log("Waiting: " + (data.cooldownTime - bonusCooldown));
 		yield return new WaitForSeconds(data.cooldownTime - bonusCooldown);
-		
+		circleAnimator.SetBool("isOnCooldown",false);
 		isOnCooldown = false;
 	}
 
@@ -149,18 +144,25 @@ public class PlayerEntity : MonoBehaviour {
 			yield break;
 
 		isCasting = true;
-
+		circleAnimator.SetBool("isCasting",true);
 		// play fire animation here
 		Debug.Log("Casting");
 		yield return new WaitForSeconds(data.castTime);
 
 		OnCastingComplete();
-
+		circleAnimator.SetBool("isCasting",false);
 		isCasting = false;
 	}
 
 	IEnumerator FollowerUpdateCoroutine(System.Action OnFollowerAddition)
 	{
+		yield return new WaitForSeconds(5);
+
+		for ( int f = 0 ; f < 5 ; f++)
+		{
+			OnFollowerAddition();
+		}
+
 		float totalPenalty = 0;
 		while ( cultistList.Count > 0 )
 		{
