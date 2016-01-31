@@ -71,7 +71,8 @@ public class Monster : MonoBehaviour {
 	public void Enable()
 	{
 		isAlive = true;
-		gameObject.SetActive(true);
+		//gameObject.SetActive(true);
+		gameObject.SetActiveRecursively(true);
 	}
 
 	void OnEnable()
