@@ -57,6 +57,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 11bce774ff9797b4191d5d1b16aa3d79, type: 3}
   - {fileID: 8300000, guid: d6f6cb03d3b33f144a0ced457600e501, type: 3}
   - {fileID: 8300000, guid: db5c8eac2b486dc4792aa21c117da73b, type: 3}
+  - {fileID: 8300000, guid: 27f4baf4dbf7af34783ccc71308ff282, type: 3}
+  - {fileID: 8300000, guid: 8910e850217c4bc4f862499d77e74e3a, type: 3}
   maxSimlutSfxOfOneType: 4
   numberOfChannels: 16
 --- !u!1001 &100100000

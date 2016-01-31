@@ -27,8 +27,8 @@ public class PlayerEntity : MonoBehaviour {
 
 	// Use this for initialization
 
-	private bool isCasting = false;
-	private bool isOnCooldown = false;
+	public bool isCasting = false;
+	public bool isOnCooldown = false;
 
 	private float currentCooldown = 0;
 
@@ -90,7 +90,7 @@ public class PlayerEntity : MonoBehaviour {
 		tools.Clear();
 
 		int random = Random.Range(1,3);
-		SoundManager.Instance.Play("invocacion"+random);
+		SoundManager.Instance.Play("invocacion" + random, 0.8f, Random.Range(0.75f,1.24f));
 		StartCoroutine( CooldownCoroutine() );
 	}
 
@@ -154,6 +154,7 @@ public class PlayerEntity : MonoBehaviour {
 
 		OnCastingComplete();
 		circleAnimator.SetBool("isCasting",false);
+
 		isCasting = false;
 	}
 
@@ -209,7 +210,7 @@ public class PlayerEntity : MonoBehaviour {
 		{
 			if( f.activeInHierarchy )
 			{
-				SoundManager.Instance.Play("sacrificio");
+				SoundManager.Instance.Play("sacrificio", 0.85f , Random.Range(0.75f, 1.25f));
 				followerList.Remove(f);
 				ObjectPool.instance.PoolObject(f);
 				
