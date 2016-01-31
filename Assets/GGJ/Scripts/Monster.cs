@@ -29,6 +29,8 @@ public class Monster : MonoBehaviour {
 	private string MonsterTag = "Monster";
 	private string SpawnTag = "Spawn";
 	public float power = 0;
+
+	
 	private void OnMonsterSpawned()
 	{
 		if ( MonsterSpawned != null )
