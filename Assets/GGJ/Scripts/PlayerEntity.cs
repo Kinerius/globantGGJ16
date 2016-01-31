@@ -59,7 +59,7 @@ public class PlayerEntity : MonoBehaviour {
 
 		if ( tools != null && tools.Count < 3 )
 		{
-			Debug.Log("add tool");
+			//Debug.Log("add tool");
 			tools.Add(type);
 			if ( tools.Count >= 3 )
 			{
@@ -82,7 +82,7 @@ public class PlayerEntity : MonoBehaviour {
 		} else {
 			spawnDirection = -Vector3.right;
 		}
-		Debug.Log("Summoning minion");
+		//Debug.Log("Summoning minion");
 		//GameObject tmpMonster = Instantiate(monsterTemp);
 		_currentSpawnMonster.Spawn(spawnPointTransform.position, spawnDirection, player);
 		_currentSpawnMonster.Enable();
@@ -96,7 +96,7 @@ public class PlayerEntity : MonoBehaviour {
 
 	public void KillCultist ( ) 
 	{
-		Debug.Log("Killing cultist");
+		//Debug.Log("Killing cultist");
 		foreach ( Cultist cultist in cultistList ) 
 		{
 			if ( cultist.isAlive ) 
@@ -135,7 +135,7 @@ public class PlayerEntity : MonoBehaviour {
 		isOnCooldown = true;
 		circleAnimator.SetBool("isOnCooldown",true);
 		currentCooldown = bonusCooldown * followerList.Count;
-		Debug.Log("Waiting: " + (data.cooldownTime - bonusCooldown));
+		//Debug.Log("Waiting: " + (data.cooldownTime - bonusCooldown));
 		yield return new WaitForSeconds(data.cooldownTime - bonusCooldown);
 		circleAnimator.SetBool("isOnCooldown",false);
 		isOnCooldown = false;
@@ -149,7 +149,7 @@ public class PlayerEntity : MonoBehaviour {
 		isCasting = true;
 		circleAnimator.SetBool("isCasting",true);
 		// play fire animation here
-		Debug.Log("Casting");
+		//Debug.Log("Casting");
 		yield return new WaitForSeconds(data.castTime);
 
 		OnCastingComplete();
@@ -185,8 +185,13 @@ public class PlayerEntity : MonoBehaviour {
 	public void OnFollowerAddition()
 	{
 		//Debug.Log("Follower added");
-		GameObject follower = ObjectPool.instance.GetObjectForType("Follower", true);
-		Vector3 random = new Vector3(Random.Range(-2,2),0,Random.Range(-2,2));
+		string followerName = "Follower";
+		if ( player == MonsterAlignment.PLAYER_2 ) followerName = "FollowerRed";
+
+		GameObject follower = ObjectPool.instance.GetObjectForType(followerName, true);
+		float random1 = Random.Range(-2,2);
+		float random2 = Random.Range(-2,2);
+		Vector3 random = new Vector3(random1,0,random2);
 		if (follower != null)
 		{
 			follower.transform.position = followerSpawnPoint.position+random;
@@ -197,7 +202,7 @@ public class PlayerEntity : MonoBehaviour {
 
 	public void SacrifyFollower()
 	{
-		Debug.Log("SacrifyFollower");
+		//Debug.Log("SacrifyFollower");
 		if (_currentSpawnMonster != null)
 			_currentSpawnMonster.AddPower();
 		currentPenalization += 1;

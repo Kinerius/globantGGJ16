@@ -51,7 +51,6 @@ public class Monster : MonoBehaviour {
 
 	public void AddPower()
 	{
-		Debug.Log("EMPOWER");
 		power += 1;
 	}
 
