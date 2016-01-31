@@ -221,7 +221,6 @@ public class Monster : MonoBehaviour {
 			FightResult result = Fight(enemy.values, enemy.power);
 			if ( result == FightResult.WIN )
 			{
-                RenderUpdate(true, "StartAtack");
 				enemy.Kill();
 			} else if (result == FightResult.DEFEAT )
 			{
@@ -230,6 +229,8 @@ public class Monster : MonoBehaviour {
 				enemy.Kill();
 				this.Kill();
 			}
+			RenderUpdate(true, "StartAtack");
+			enemy.RenderUpdate(true, "StartAtack");
 		}
 	}
 

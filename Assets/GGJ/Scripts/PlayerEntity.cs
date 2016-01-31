@@ -48,6 +48,9 @@ public class PlayerEntity : MonoBehaviour {
 
 	public void AddRitualTool (RitualToolType type)
 	{
+		/*if ( cultistList.Count <= 0)
+			return;*/
+		
 		if ( isOnCooldown ) 
 			return;
 
@@ -104,6 +107,7 @@ public class PlayerEntity : MonoBehaviour {
 			if ( cultist.isAlive ) 
 			{
 				cultist.Kill();
+				cultistList.Remove(cultist);
 				return;
 			}
 		}
@@ -181,6 +185,13 @@ public class PlayerEntity : MonoBehaviour {
 			}
 			
 			yield return new WaitForEndOfFrame();
+		}
+
+		if ( cultistList.Count <= 0)
+		{
+			GameObject particle = ObjectPool.instance.GetObjectForType("sumonParticle",true);
+			particle.transform.position = spawnPointTransform.position;
+			particle.GetComponent<Effect>().disableTime = 10000;
 		}
 	}
 

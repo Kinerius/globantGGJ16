@@ -47,6 +47,18 @@ public class Effect : MonoBehaviour
 
 	void Kill()
 	{
+		emitter.Stop();
+		StartCoroutine(StopInSecondsCoroutine());
+	}
+
+	IEnumerator StopInSecondsCoroutine()
+	{
+		yield return new WaitForSeconds(3);
+		OnStartPool();
+	}
+
+	void OnStartPool()
+	{
 		gameObject.SetActive(false);
 		ObjectPool.instance.PoolObject(gameObject);
 	}

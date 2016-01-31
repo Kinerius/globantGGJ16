@@ -33,7 +33,26 @@ public class GameMaster : MonoBehaviour {
 		player_1.data = data;
 		player_2.data = data;
 	}
-	
-	
+	bool someoneWon = false;
+	void Update()
+	{
+		if ( someoneWon )
+			return;
+
+		if ( player_1.cultistList.Count == 0)
+		{
+			GameObject confeti = ObjectPool.instance.GetObjectForType("confeti",true);
+			confeti.transform.position = player_2.spawnPointTransform.transform.position;
+			someoneWon = true;
+		}	
+
+		if ( player_2.cultistList.Count == 0)
+		{
+			GameObject confeti = ObjectPool.instance.GetObjectForType("confeti",true);
+			confeti.transform.position = player_1.spawnPointTransform.transform.position;
+			someoneWon = true;
+		}	
+
+	}
 
 }

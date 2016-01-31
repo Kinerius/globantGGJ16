@@ -42,12 +42,12 @@ MonoBehaviour:
   player_1: {fileID: 0}
   player_2: {fileID: 0}
   data:
-    castTime: 2
-    cooldownTime: 2
-    cooldownBonusPerFollower: 0.1
-    maxFollowers: 20
-    followerTimer: 2
-    followerPenalization: 1
+    castTime: 1
+    cooldownTime: 7
+    cooldownBonusPerFollower: 0.65
+    maxFollowers: 10
+    followerTimer: 6
+    followerPenalization: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
