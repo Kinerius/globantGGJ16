@@ -46,7 +46,7 @@ MonoBehaviour:
     cooldownTime: 2
     cooldownBonusPerFollower: 0.1
     maxFollowers: 20
-    followerTimer: 0.5
+    followerTimer: 2
     followerPenalization: 1
 --- !u!1001 &100100000
 Prefab:

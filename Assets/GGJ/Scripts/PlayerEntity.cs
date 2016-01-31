@@ -88,6 +88,9 @@ public class PlayerEntity : MonoBehaviour {
 		_currentSpawnMonster.Enable();
 
 		tools.Clear();
+
+		int random = Random.Range(1,3);
+		SoundManager.Instance.Play("invocacion"+random);
 		StartCoroutine( CooldownCoroutine() );
 	}
 
@@ -183,8 +186,12 @@ public class PlayerEntity : MonoBehaviour {
 		//Debug.Log("Follower added");
 		GameObject follower = ObjectPool.instance.GetObjectForType("Follower", true);
 		Vector3 random = new Vector3(Random.Range(-2,2),0,Random.Range(-2,2));
-		follower.transform.position = followerSpawnPoint.position+random;
-		followerList.Add ( follower );
+		if (follower != null)
+		{
+			follower.transform.position = followerSpawnPoint.position+random;
+			followerList.Add ( follower );
+		}
+		
 	}
 
 	public void SacrifyFollower()

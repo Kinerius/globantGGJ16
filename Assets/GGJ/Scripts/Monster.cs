@@ -29,6 +29,10 @@ public class Monster : MonoBehaviour {
 	private string MonsterTag = "Monster";
 	private string SpawnTag = "Spawn";
 	public float power = 0;
+
+	public Animator anim;
+	public SpriteRenderer renderer;
+
 	private void OnMonsterSpawned()
 	{
 		if ( MonsterSpawned != null )
@@ -50,11 +54,64 @@ public class Monster : MonoBehaviour {
 
 	public void AddValues( List<RitualToolType> tool ) 
 	{
+		int value1 = 0;
+		int value2 = 0;
+		int value3 = 0;
+
 		values = new List<RitualToolType>();
 		foreach ( RitualToolType t in tool )
 		{
+
 			values.Add(t);
+
+			if ( t == RitualToolType.PIEDRA )
+				value1++;
+
+			if ( t == RitualToolType.PAPEL )
+				value2++;
+
+			if ( t == RitualToolType.TIJERA )
+				value2++;
+
 		}	
+
+		int MonsterType = 0;
+		int MonsterVariation = 0;
+
+		if ( value1 == 3 )
+			MonsterType = 0;
+
+		if ( value2 == 3)
+			MonsterType = 1;
+		
+		if ( value3 == 3)
+			MonsterType = 2;
+
+		if ( value1 == 2 )  // M1
+		{
+			MonsterType = 3;
+			MonsterVariation = 0;
+		}
+
+		if ( value2 == 2 ) // M2
+		{
+			MonsterType = 3;
+			MonsterVariation = 1;
+		}
+		
+		if ( value3 == 2 ) // M3
+		{
+			MonsterType = 3;
+			MonsterVariation = 2;
+		}
+
+		if ( value1 == 1 && value2 == 1 && value3 == 1 )
+			MonsterType = 4;
+
+		Debug.Log("Type: " + MonsterType + " Variation: " + MonsterVariation);
+		anim.SetInteger("MonsterType", MonsterType);
+		anim.SetInteger("MonsterVariation", MonsterVariation);
+
 	}
 
 	public void Spawn( Vector3 position, Vector3 dir, MonsterAlignment align)
@@ -66,6 +123,10 @@ public class Monster : MonoBehaviour {
 		//isAlive = true;
 		//Debug.Log(alignment);
 		tag = MonsterTag + (int)alignment;
+		if ( alignment == MonsterAlignment.PLAYER_2 )
+		{
+			renderer.flipX = true;
+		}
 	}
 
 	public void Enable()
@@ -182,6 +243,7 @@ public class Monster : MonoBehaviour {
 	public void Kill()
 	{
 		isAlive = false;
+		SoundManager.Instance.Play("demon");
 		//SoundManager.Instance.Play("sacrificio");
 		ObjectPool.instance.PoolObject(gameObject);
 	}	

@@ -1,0 +1,131 @@
+fileFormatVersion: 2
+guid: c09cbd50e997cda4e87ac5f129d0f0c8
+timeCreated: 1454246646
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: demon4blue_0
+    21300002: demon4blue_1
+    21300004: demon4blue_2
+    21300006: demon4blue_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: demon4blue_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 50
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 23}
+        - {x: -24, y: 9}
+        - {x: -25, y: -13}
+        - {x: -25, y: -29}
+        - {x: 10, y: -29}
+        - {x: 12, y: -26}
+        - {x: 12, y: 22}
+        - {x: 5, y: 23}
+    - name: demon4blue_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 50
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 28}
+        - {x: -25, y: -6}
+        - {x: -25, y: -29}
+        - {x: 15, y: -29}
+        - {x: 15, y: 20}
+        - {x: 6, y: 28}
+    - name: demon4blue_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 50
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 18}
+        - {x: -19, y: 13}
+        - {x: -25, y: -19}
+        - {x: -25, y: -29}
+        - {x: 14, y: -29}
+        - {x: 25, y: -11}
+        - {x: 25, y: 11}
+        - {x: 19, y: 18}
+    - name: demon4blue_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 50
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 29}
+        - {x: -25, y: -29}
+        - {x: 25, y: -29}
+        - {x: 25, y: 29}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
