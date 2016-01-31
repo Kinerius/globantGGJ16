@@ -74,7 +74,7 @@ public class Monster : MonoBehaviour {
 				value2++;
 
 			if ( t == RitualToolType.TIJERA )
-				value2++;
+				value3++;
 
 		}	
 
